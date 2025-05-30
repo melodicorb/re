@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Saved Keywords | LinkedIn Keywords Research Tool</title>
+  <link rel="icon" type="image/svg+xml" href="./images/favicon.svg">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="bg-white shadow-sm sticky-top">
+    <nav class="navbar navbar-expand-lg navbar-light container py-3">
+      <div class="container-fluid">
+        <a class="navbar-brand d-flex align-items-center" href="./index.html">
+          <img 
+            src="./images/logo.svg" 
+            alt="LinkedIn Keywords Research Tool Logo" 
+            width="30" 
+            height="30" 
+            class="me-2" 
+          />
+          <span>LinkedIn Keywords Tool</span>
+        </a>
+        <button 
+          class="navbar-toggler" 
+          type="button" 
+          data-bs-toggle="collapse" 
+          data-bs-target="#navbarNav" 
+          aria-controls="navbarNav" 
+          aria-expanded="false" 
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="./index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./search.html">Search</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="./saved-keywords.html">Saved Keywords</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./about.html">About</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main class="py-5">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
+          <div class="card shadow-sm">
+            <div class="card-body p-4">
+              <h1 class="mb-4">Your Saved Keywords</h1>
+              
+              <p class="lead mb-4">
+                View and manage all the keywords you've saved for your LinkedIn profile, job searches, and content.
+              </p>
+              
+              <div id="saved-keywords-container">
+                <!-- Saved keywords will be displayed here -->
+                <div class="text-center py-5" id="no-keywords-message">
+                  <div class="display-1 mb-3">📋</div>
+                  <h3>No saved keywords yet</h3>
+                  <p class="text-muted">Start searching and saving keywords to see them here</p>
+                  <a href="./search.html" class="btn btn-primary mt-3">
+                    <i class="bi bi-search me-2"></i>Search Keywords
+                  </a>
+                </div>
+              </div>
+              
+              <div id="keywords-list" class="d-none">
+                <!-- Categories tabs -->
+                <ul class="nav nav-tabs mb-4" id="keywordsTabs" role="tablist">
+                  <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="all-tab" data-bs-toggle="tab" data-bs-target="#all-keywords" type="button" role="tab" aria-controls="all-keywords" aria-selected="true">All Keywords</button>
+                  </li>
+                  <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-keywords" type="button" role="tab" aria-controls="profile-keywords" aria-selected="false">Profile</button>
+                  </li>
+                  <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="job-tab" data-bs-toggle="tab" data-bs-target="#job-keywords" type="button" role="tab" aria-controls="job-keywords" aria-selected="false">Job Search</button>
+                  </li>
+                  <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="content-tab" data-bs-toggle="tab" data-bs-target="#content-keywords" type="button" role="tab" aria-controls="content-keywords" aria-selected="false">Content</button>
+                  </li>
+                </ul>
+                
+                <!-- Tab content -->
+                <div class="tab-content" id="keywordsTabContent">
+                  <div class="tab-pane fade show active" id="all-keywords" role="tabpanel" aria-labelledby="all-tab">
+                    <div class="table-responsive">
+                      <table class="table table-hover">
+                        <thead>
+                          <tr>
+                            <th>Keyword</th>
+                            <th>Category</th>
+                            <th>Popularity</th>
+                            <th>Relevance</th>
+                            <th>Difficulty</th>
+                            <th>% Views</th>
+                            <th>Actions</th>
+                          </tr>
+                        </thead>
+                        <tbody id="all-keywords-body">
+                          <!-- All keywords will be displayed here -->
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                  
+                  <div class="tab-pane fade" id="profile-keywords" role="tabpanel" aria-labelledby="profile-tab">
+                    <div class="table-responsive">
+                      <table class="table table-hover">
+                        <thead>
+                          <tr>
+                            <th>Keyword</th>
+                            <th>Popularity</th>
+                            <th>Relevance</th>
+                            <th>Difficulty</th>
+                            <th>% Views</th>
+                            <th>Actions</th>
+                          </tr>
+                        </thead>
+                        <tbody id="profile-keywords-body">
+                          <!-- Profile keywords will be displayed here -->
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                  
+                  <div class="tab-pane fade" id="job-keywords" role="tabpanel" aria-labelledby="job-tab">
+                    <div class="table-responsive">
+                      <table class="table table-hover">
+                        <thead>
+                          <tr>
+                            <th>Keyword</th>
+                            <th>Popularity</th>
+                            <th>Relevance</th>
+                            <th>Difficulty</th>
+                            <th>% Views</th>
+                            <th>Actions</th>
+                          </tr>
+                        </thead>
+                        <tbody id="job-keywords-body">
+                          <!-- Job search keywords will be displayed here -->
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                  
+                  <div class="tab-pane fade" id="content-keywords" role="tabpanel" aria-labelledby="content-tab">
+                    <div class="table-responsive">
+                      <table class="table table-hover">
+                        <thead>
+                          <tr>
+                            <th>Keyword</th>
+                            <th>Popularity</th>
+                            <th>Relevance</th>
+                            <th>Difficulty</th>
+                            <th>% Views</th>
+                            <th>Actions</th>
+                          </tr>
+                        </thead>
+                        <tbody id="content-keywords-body">
+                          <!-- Content keywords will be displayed here -->
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="d-flex justify-content-end mt-4">
+                  <button id="clear-all-keywords" class="btn btn-outline-danger">
+                    <i class="bi bi-trash me-2"></i>Clear All Keywords
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-light py-4 mt-auto">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-6">
+          <img 
+            src="./images/logo.svg" 
+            alt="LinkedIn Keywords Research Tool Logo" 
+            width="24" 
+            height="24" 
+            class="me-2" 
+          />
+          <p class="mb-0">&copy; <span id="current-year"></span> LinkedIn Keywords Research Tool</p>
+        </div>
+        <div class="col-md-6 text-md-end">
+          <ul class="list-inline mb-0">
+            <li class="list-inline-item">
+              <a href="./about.html" class="text-decoration-none">About</a>
+            </li>
+            <li class="list-inline-item ms-3">
+              <a href="./privacy.html" class="text-decoration-none">Privacy Policy</a>
+            </li>
+            <li class="list-inline-item ms-3">
+              <a href="./terms.html" class="text-decoration-none">Terms of Service</a>
+            </li>
+            <li class="list-inline-item ms-3">
+              <a 
+                href="https://www.facebook.com/megahub11" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                class="text-decoration-none"
+              >
+                <i class="bi bi-facebook me-1"></i>Facebook
+              </a>
+            </li>
+            <li class="list-inline-item ms-3">
+              <a 
+                href="https://clicksoftly.com/" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                class="text-decoration-none"
+              >
+                <i class="bi bi-globe me-1"></i>Website
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="./js/main.js"></script>
+  <script>
+    // Display saved keywords
+    document.addEventListener('DOMContentLoaded', function() {
+      // Get saved keywords from localStorage
+      const savedKeywords = JSON.parse(localStorage.getItem('savedKeywords')) || [];
+      
+      // Update UI based on whether there are saved keywords
+      if (savedKeywords.length > 0) {
+        document.getElementById('no-keywords-message').classList.add('d-none');
+        document.getElementById('keywords-list').classList.remove('d-none');
+        
+        // Populate the tables
+        populateKeywordsTable('all-keywords-body', savedKeywords);
+        populateKeywordsTable('profile-keywords-body', savedKeywords.filter(k => k.category === 'profile'));
+        populateKeywordsTable('job-keywords-body', savedKeywords.filter(k => k.category === 'job'));
+        populateKeywordsTable('content-keywords-body', savedKeywords.filter(k => k.category === 'content'));
+      }
+      
+      // Add event listener for clear all button
+      document.getElementById('clear-all-keywords').addEventListener('click', function() {
+        if (confirm('Are you sure you want to clear all saved keywords?')) {
+          localStorage.removeItem('savedKeywords');
+          window.location.reload();
+        }
+      });
+    });
+    
+    // Function to populate keywords table
+    function populateKeywordsTable(tableId, keywords) {
+      const tableBody = document.getElementById(tableId);
+      tableBody.innerHTML = '';
+      
+      keywords.forEach((keyword, index) => {
+        const row = document.createElement('tr');
+        
+        // Create table cells based on which table we're populating
+        if (tableId === 'all-keywords-body') {
+          row.innerHTML = `
+            <td>${keyword.term}</td>
+            <td><span class="badge bg-${getCategoryColor(keyword.category)}">${getCategoryName(keyword.category)}</span></td>
+            <td><div class="progress" style="height: 6px;"><div class="progress-bar" style="width: ${keyword.popularity}%"></div></div> ${keyword.popularity}%</td>
+            <td><div class="progress" style="height: 6px;"><div class="progress-bar" style="width: ${keyword.relevance}%"></div></div> ${keyword.relevance}%</td>
+            <td><div class="progress" style="height: 6px;"><div class="progress-bar" style="width: ${keyword.difficulty}%"></div></div> ${keyword.difficulty}%</td>
+            <td>+${keyword.views}%</td>
+            <td>
+              <button class="btn btn-sm btn-outline-danger remove-keyword" data-index="${index}">
+                <i class="bi bi-trash"></i>
+              </button>
+            </td>
+          `;
+        } else {
+          row.innerHTML = `
+            <td>${keyword.term}</td>
+            <td><div class="progress" style="height: 6px;"><div class="progress-bar" style="width: ${keyword.popularity}%"></div></div> ${keyword.popularity}%</td>
+            <td><div class="progress" style="height: 6px;"><div class="progress-bar" style="width: ${keyword.relevance}%"></div></div> ${keyword.relevance}%</td>
+            <td><div class="progress" style="height: 6px;"><div class="progress-bar" style="width: ${keyword.difficulty}%"></div></div> ${keyword.difficulty}%</td>
+            <td>+${keyword.views}%</td>
+            <td>
+              <button class="btn btn-sm btn-outline-danger remove-keyword" data-index="${index}">
+                <i class="bi bi-trash"></i>
+              </button>
+            </td>
+          `;
+        }
+        
+        tableBody.appendChild(row);
+      });
+      
+      // Add event listeners for remove buttons
+      document.querySelectorAll('.remove-keyword').forEach(button => {
+        button.addEventListener('click', function() {
+          const index = parseInt(this.getAttribute('data-index'));
+          removeKeyword(index);
+        });
+      });
+    }
+    
+    // Function to remove a keyword
+    function removeKeyword(index) {
+      const savedKeywords = JSON.parse(localStorage.getItem('savedKeywords')) || [];
+      savedKeywords.splice(index, 1);
+      localStorage.setItem('savedKeywords', JSON.stringify(savedKeywords));
+      window.location.reload();
+    }
+    
+    // Helper functions
+    function getCategoryName(category) {
+      switch(category) {
+        case 'profile': return 'Profile';
+        case 'job': return 'Job Search';
+        case 'content': return 'Content';
+        default: return category;
+      }
+    }
+    
+    function getCategoryColor(category) {
+      switch(category) {
+        case 'profile': return 'primary';
+        case 'job': return 'success';
+        case 'content': return 'info';
+        default: return 'secondary';
+      }
+    }
+  </script>
+</body>
+</html>

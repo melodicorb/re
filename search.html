@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Search Keywords - LinkedIn Keywords Research Tool</title>
+  <meta name="description" content="Research and find the best keywords for your LinkedIn profile, content, and job search">
+  <link rel="icon" href="./images/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="./favicon.ico">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+  <div class="d-flex flex-column min-vh-100">
+    <!-- Header -->
+    <header class="navbar navbar-expand-lg navbar-dark bg-primary">
+      <div class="container">
+        <a href="./index.html" class="navbar-brand d-flex align-items-center">
+          <img src="./images/logo.svg" alt="LinkedIn Keywords Research Tool Logo" width="36" height="36" class="me-2">
+          LinkedIn Keywords Research Tool
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a href="./index.html" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item">
+              <a href="./saved-keywords.html" class="nav-link">Saved Keywords</a>
+            </li>
+            <li class="nav-item">
+              <a href="./about.html" class="nav-link">About</a>
+            </li>
+            <li class="nav-item">
+              <a href="https://www.facebook.com/megahub11" target="_blank" rel="noopener noreferrer" class="nav-link">
+                <i class="bi bi-facebook"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </header>
+
+    <!-- Banner Ad -->
+    <div class="d-flex justify-content-center py-2 bg-light">
+      <div class="banner-ad-container">
+        <!-- Banner ad content would go here -->
+      </div>
+    </div>
+
+    <!-- Social Bar Ad -->
+    <div class="social-bar-ad-container">
+      <!-- Social bar ad content would go here -->
+    </div>
+
+    <!-- Main Content -->
+    <main class="flex-grow-1 py-4">
+      <div class="container">
+        <!-- Native Banner Ad -->
+        <div class="native-banner-ad-container my-3">
+          <div id="container-4aef178ddc5889e79b8f14eea899f0fb"></div>
+        </div>
+
+        <!-- Search Form -->
+        <div class="row mb-5">
+          <div class="col-lg-8 mx-auto">
+            <form id="keywordSearchForm" class="mb-4">
+              <div class="card bg-light shadow-sm">
+                <div class="card-body p-4">
+                  <h3 class="card-title mb-4">Find the perfect LinkedIn keywords</h3>
+                  
+                  <div class="mb-3">
+                    <label for="keyword" class="form-label">Enter a keyword or phrase</label>
+                    <input
+                      type="text"
+                      class="form-control form-control-lg"
+                      id="keyword"
+                      placeholder="e.g., project manager, digital marketing, data analyst"
+                    />
+                  </div>
+                  
+                  <div class="mb-4">
+                    <label class="form-label">Select category</label>
+                    <div class="d-flex flex-wrap gap-2">
+                      <div class="form-check">
+                        <input
+                          class="form-check-input"
+                          type="radio"
+                          name="category"
+                          id="profileCategory"
+                          value="profile"
+                          checked
+                        />
+                        <label class="form-check-label" for="profileCategory">
+                          Profile
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input
+                          class="form-check-input"
+                          type="radio"
+                          name="category"
+                          id="jobCategory"
+                          value="job"
+                        />
+                        <label class="form-check-label" for="jobCategory">
+                          Job Search
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input
+                          class="form-check-input"
+                          type="radio"
+                          name="category"
+                          id="contentCategory"
+                          value="content"
+                        />
+                        <label class="form-check-label" for="contentCategory">
+                          Content
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <button type="submit" class="btn btn-primary btn-lg w-100">
+                    <i class="bi bi-search me-2"></i>Research Keywords
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <!-- Search Results -->
+        <div id="searchResults" class="mb-5">
+          <!-- Results will be dynamically inserted here -->
+          <!-- Related keywords will be added here by JavaScript -->
+        </div>
+
+        <!-- Related Categories -->
+        <div class="row g-4 mb-5">
+          <div class="col-12">
+            <h3 class="text-center mb-4">Explore Other Categories</h3>
+          </div>
+          <div class="col-md-4 home-category-card">
+            <div class="card h-100 shadow-sm hover-shadow transition">
+              <div class="card-body text-center p-4">
+                <div class="display-4 mb-3">👤</div>
+                <h3 class="card-title">Profile Keywords</h3>
+                <p class="card-text text-muted">Find the best keywords to enhance your LinkedIn profile and get noticed by recruiters.</p>
+                <a href="./search.html?category=profile" class="btn btn-outline-primary mt-3">
+                  Explore Profile Keywords
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 home-category-card">
+            <div class="card h-100 shadow-sm hover-shadow transition">
+              <div class="card-body text-center p-4">
+                <div class="display-4 mb-3">🔍</div>
+                <h3 class="card-title">Job Search Keywords</h3>
+                <p class="card-text text-muted">Discover the most effective keywords to use in your job applications and searches.</p>
+                <a href="./search.html?category=job" class="btn btn-outline-primary mt-3">
+                  Explore Job Search Keywords
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 home-category-card">
+            <div class="card h-100 shadow-sm hover-shadow transition">
+              <div class="card-body text-center p-4">
+                <div class="display-4 mb-3">📝</div>
+                <h3 class="card-title">Content Keywords</h3>
+                <p class="card-text text-muted">Research trending keywords to boost engagement on your LinkedIn posts and articles.</p>
+                <a href="./search.html?category=content" class="btn btn-outline-primary mt-3">
+                  Explore Content Keywords
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-light py-4 mt-auto">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 d-flex align-items-center">
+            <img 
+              src="./images/logo.svg" 
+              alt="LinkedIn Keywords Research Tool Logo" 
+              width="24" 
+              height="24" 
+              class="me-2" 
+            />
+            <p class="mb-0">&copy; <span id="current-year"></span> LinkedIn Keywords Research Tool</p>
+          </div>
+          <div class="col-md-6 text-md-end">
+            <ul class="list-inline mb-0">
+              <li class="list-inline-item">
+                <a href="./about.html" class="text-decoration-none">About</a>
+              </li>
+              <li class="list-inline-item ms-3">
+                <a href="./privacy.html" class="text-decoration-none">Privacy Policy</a>
+              </li>
+              <li class="list-inline-item ms-3">
+                <a href="./terms.html" class="text-decoration-none">Terms of Service</a>
+              </li>
+              <li class="list-inline-item ms-3">
+                <a 
+                  href="https://www.facebook.com/megahub11" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  class="text-decoration-none"
+                >
+                  <i class="bi bi-facebook me-1"></i>Facebook
+                </a>
+              </li>
+              <li class="list-inline-item ms-3">
+                <a 
+                  href="https://clicksoftly.com/" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  class="text-decoration-none"
+                >
+                  <i class="bi bi-globe me-1"></i>Website
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="./js/main.js"></script>
+  <script src="./js/keyword-search.js"></script>
+</body>
+</html>

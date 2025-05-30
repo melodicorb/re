@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36">
+  <!-- Background Circle -->
+  <circle cx="18" cy="18" r="17" fill="#0A66C2" />
+  
+  <!-- LinkedIn 'in' Symbol (Simplified) -->
+  <text x="10" y="26" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="white">in</text>
+  
+  <!-- Magnifying Glass -->
+  <g transform="translate(20, 10) scale(0.6)" fill="white">
+    <circle cx="8" cy="8" r="7" fill="none" stroke="white" stroke-width="2.5" />
+    <line x1="13" y1="13" x2="18" y2="18" stroke="white" stroke-width="2.5" stroke-linecap="round" />
+  </g>
+  
+  <!-- Keywords Dots -->
+  <circle cx="6" cy="6" r="1.5" fill="white" opacity="0.8" />
+  <circle cx="30" cy="18" r="1.5" fill="white" opacity="0.8" />
+  <circle cx="6" cy="30" r="1.5" fill="white" opacity="0.8" />
+</svg>
